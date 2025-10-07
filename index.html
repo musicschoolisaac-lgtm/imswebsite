@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,52 @@
   <title>Home | Harmony Music School Rwanda</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Carousel styles */
+    /* General Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: 600;
+      padding: 8px 15px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #b22222;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* Carousel */
     .carousel {
       position: relative;
       width: 100%;
@@ -19,156 +63,196 @@
       width: 100%;
       height: 500px;
       object-fit: cover;
-      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .carousel img.active {
-      display: block;
+      opacity: 1;
+      z-index: 1;
     }
 
-    /* Basic styling for layout */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-    }
-
-    nav {
-      background: #222;
+    .carousel-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.5);
       color: #fff;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      text-align: center;
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #f8c102;
-    }
-
+    /* Header */
     header {
       text-align: center;
-      padding: 40px 20px;
-      background: #fff;
+      padding: 50px 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     header h1 {
       color: #b22222;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
     }
 
-    main {
-      max-width: 1000px;
+    header p {
+      max-width: 800px;
       margin: 0 auto;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1100px;
+      margin: 30px auto;
       padding: 20px;
-      background: #fff;
     }
 
     section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
     h2 {
       color: #b22222;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #555;
     }
 
     ul {
       list-style: disc;
-      margin-left: 20px;
+      margin-left: 25px;
+      color: #333;
     }
 
+    li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    /* Buttons */
     .cta {
       display: inline-block;
       margin-top: 15px;
-      padding: 10px 20px;
+      padding: 12px 25px;
       background: #b22222;
       color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .cta:hover {
       background: #d63031;
+      transform: scale(1.05);
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       background: #222;
       color: #fff;
       margin-top: 30px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
-    <a href="services.html">Services</a>
+    <a href="services.html">Programs</a>
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact Us</a>
   </nav>
 
-  <!-- Image Carousel -->
+  <!-- Carousel -->
   <div class="carousel">
     <img src="images/music1.jpg" class="active" alt="Students performing at Harmony Music School">
+    <div class="carousel-caption">Our students performing at Harmony Music School</div>
     <img src="images/music2.jpg" alt="Guitar lessons in progress">
     <img src="images/music3.jpg" alt="Traditional Rwandan music and dance session">
   </div>
 
+  <!-- Header -->
   <header>
     <h1>Welcome to Harmony Music School Rwanda</h1>
-    <p>Discover your musical voice with Harmony Music School — where passion meets excellence. Located in the heart of Kigali, we nurture students of all ages and skill levels to explore, create, and perform music with confidence.</p>
+    <p>At Harmony Music School, we believe every student has a unique musical voice. Our expert instructors help learners of all ages explore, create, and perform music with confidence in modern facilities and a nurturing environment.</p>
   </header>
 
+  <!-- Main Content -->
   <main>
     <section>
-      <p>Whether you’re picking up an instrument for the first time or perfecting your performance technique, our experienced instructors guide you every step of the way through personalized lessons, modern facilities, and a supportive learning environment.</p>
-      <p>Join a growing community of musicians who are shaping Rwanda’s vibrant music scene.</p>
-      <h2>Inspire. Learn. Perform.</h2>
+      <h2>Our Mission</h2>
+      <p>We aim to nurture talent and inspire creativity in every student. By combining traditional and contemporary teaching methods, we cultivate a passion for music and performance, preparing students to shine on both local and international stages.</p>
+      <p>Join our vibrant community of musicians and discover a world of musical possibilities.</p>
     </section>
 
     <section>
       <h2>Featured Programs</h2>
       <ul>
-        <li>Piano & Keyboard Training</li>
-        <li>Guitar & Bass Lessons</li>
-        <li>Voice & Vocal Coaching</li>
-        <li>Drums & Percussion</li>
-        <li>Traditional Rwandan Music & Dance</li>
-        <li>Music Theory & Composition</li>
+        <li>Piano & Keyboard Training – Beginner to Advanced</li>
+        <li>Guitar & Bass Lessons – Rock, Jazz, & Classical Styles</li>
+        <li>Voice & Vocal Coaching – Technique & Performance</li>
+        <li>Drums & Percussion – Rhythm Mastery</li>
+        <li>Traditional Rwandan Music & Dance – Cultural Enrichment</li>
+        <li>Music Theory & Composition – Unlock Your Creativity</li>
       </ul>
     </section>
 
     <section>
-      <h2>Start Your Journey Today</h2>
-      <p>Enroll now and make your passion for music your greatest skill.</p>
+      <h2>Start Your Musical Journey Today</h2>
+      <p>Whether you dream of performing on stage or composing your own music, we are here to guide you. Enroll now and transform your passion into skill!</p>
       <a class="cta" href="contact.html">Enroll Now</a>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 Harmony Music School Rwanda. All rights reserved.
   </footer>
 
+  <!-- Carousel Script -->
   <script>
-    // Simple image carousel logic
     let index = 0;
     const images = document.querySelectorAll('.carousel img');
+    const captions = document.querySelectorAll('.carousel-caption');
 
     setInterval(() => {
       images[index].classList.remove('active');
       index = (index + 1) % images.length;
       images[index].classList.add('active');
-    }, 4000); // change every 4 seconds
+
+      // Update captions based on active image
+      if (index === 0) captions[0].innerText = 'Our students performing at Harmony Music School';
+      if (index === 1) captions[0].innerText = 'Interactive guitar lessons with expert instructors';
+      if (index === 2) captions[0].innerText = 'Traditional Rwandan music and dance classes';
+    }, 4000);
   </script>
 </body>
 </html>
-```
